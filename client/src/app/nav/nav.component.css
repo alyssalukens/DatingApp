@@ -1,3 +1,40 @@
+.navbar-dark a{
+    color:#ffc107;
+}
+
+/* TODO: Change toggler color */
+
 .dropdown-toggle, .dropdown-item{
     cursor: pointer;
+}
+
+.form-control {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.login-label{
+    color: #ffc107;
+    margin:auto;
+}
+
+.login-btn{
+    margin-left:10px;
+}
+
+/* .login-heading{
+    color:white;
+    margin-right: 25px;
+} */
+
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+.login-label{
+    margin-left: 10px;
+}
+
+.login-btn{
+    margin:auto;
+}
 }

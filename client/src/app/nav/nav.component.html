@@ -1,15 +1,17 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
+    <div class="container-fluid nav-conatiner">
+        
         <a class="navbar-brand" href="#">XJam</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="toggleCollapsed()">
+        <span class="navbar-toggler-icon" id="icon"></span>
+    </button>
+    <div id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
             
-
-            <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
-
+            <ul class="navbar-nav me-auto mb-0">
                 <li class="nav-item active">
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
@@ -22,10 +24,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" (click)="logout()">Games</a>
                 </li>
-                
             </ul>
-
-            <div class="dropdown" *ngIf="loggedIn" dropdown>
+        
+            
+            
+            <hr class="d-flex justify-content-end">
+            <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
                 <a class="dropdown-toggle text-light" dropdownToggle>Welcome, User</a>
                 <div class="dropdown-menu mt-3" *dropdownMenu>
                     <a class="dropdown-item">Edit Profile</a>
@@ -33,24 +37,36 @@
                     <a class="dropdown-item" (click)="logout()">Logout</a>
                 </div>
             </div>
+            
+            <div class="dropdown-divider mb-2" *ngIf="(accountService.currentUser$ | async) === null"></div>
 
-            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="!loggedIn">
+            <!-- <h4 class="login-heading" *ngIf="(accountService.currentUser$ | async) === null">Login:</h4> -->
+            
+            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="(accountService.currentUser$ | async) === null">
+                
+                <label class="login-label" for="username">Username:</label>
                 <input 
                     name="username"
                     [(ngModel)]="model.username"
-                    class="form-control me-2" 
+                    class="form-control" 
                     type="text" 
                     placeholder="Username">
 
+                 <label class="login-label" for="password">Password:</label>
                 <input 
                     name="password"
                     [(ngModel)]="model.password"
-                    class="form-control me-2" 
+                    class="form-control" 
                     type="password" 
                     placeholder="Password">
-                <button class="btn btn-outline-success" type="submit">Login</button>
+                <button class="btn btn-outline-warning login-btn" type="submit">Login</button>
                 
             </form>
-        </div>
-    </div>
+            </div>
+
+            </div>
+
+        
+
+    
 </nav>
