@@ -10,10 +10,26 @@ header{
     max-width:100%;
 }
 
+.home-content {
+    background: rgb(37,19,77);
+    background: linear-gradient(185deg, rgba(37,19,77,1) 34%, 
+                rgba(12,7,27,1) 100%);
+    padding: 20px;
+    border-top: solid 2px #ffc107;
+}
+
+.about{
+    color:#3af8fa;;
+}
+
+.news {
+    color: #ffc107;
+    margin-top:0px;
+}
 /* X-Large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 header {
-    max-height:100vh;
+    max-height:98vh;
     overflow:hidden;
 }
 }

@@ -1,3 +1,12 @@
+nav{
+    background-color: black;
+}
+
+.logo{
+    width:30%; 
+    align-self: center; 
+}
+
 .navbar-dark a{
     color:#ffc107;
 }
@@ -6,6 +15,11 @@
 
 .dropdown-toggle, .dropdown-item{
     cursor: pointer;
+}
+
+.toggle-col{
+    padding-left: 38%;
+    margin:auto;
 }
 
 .form-control {
@@ -36,5 +50,9 @@
 
 .login-btn{
     margin:auto;
+}
+
+.logo{
+    width:18%;  
 }
 }
