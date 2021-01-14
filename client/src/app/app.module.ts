@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 
@@ -23,6 +25,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     FormsModule,
     BsDropdownModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
