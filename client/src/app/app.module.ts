@@ -11,12 +11,20 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
+import { UploadComponent } from './upload/upload.component';
+import { GamesComponent } from './games/games.component';
+import { ProfileComponent } from './profile/profile.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    UploadComponent,
+    GamesComponent,
+    ProfileComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
